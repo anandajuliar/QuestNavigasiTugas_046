@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">QuestNavigasiTugas_046</string>
+    <string name="welcome_title">Selamat Datang</string>
+    <string name="developer_name">Ananda Julia R</string>
+    <string name="developer_nim">20230140046</string>
+    <string name="button_masuk">Masuk</string>
+
+    <string name="page2_title">List Daftar Peserta</string>
+    <string name="label_nama_lengkap">NAMA LENGKAP</string>
+    <string name="label_jenis_kelamin">JENIS KELAMIN</string>
+    <string name="label_status_kawin">STATUS PERKAWINAN</string>
+    <string name="label_alamat">ALAMAT</string>
+    <string name="button_beranda">Beranda</string>
+    <string name="button_formulir">Formulir</string>
+
+    <string name="page3_title">Formulir Pendaftaran</string>
+    <string name="hint_nama_lengkap">Isikan nama lengkap</string>
+    <string name="hint_alamat">Isikan alamat</string>
+    <string name="radio_laki_laki">Laki-laki</string>
+    <string name="radio_perempuan">Perempuan</string>
+    <string name="dropdown_hint">Pilih status kawin</string>
+    <string name="status_kawin_1">Kawin</string>
+    <string name="status_kawin_2">Lajang</string>
+    <string name="status_kawin_3">Cerai</string>
+    <string name="button_kembali">Kembali</string>
+    <string name="button_submit">Submit</string>
+    <string name="popup_title">Pendaftaran Berhasil!</string>
+    <string name="popup_message">Data %1$s berhasil ditambahkan ke daftar.</string>
+    <string name="popup_ok">OK</string>
 </resources>

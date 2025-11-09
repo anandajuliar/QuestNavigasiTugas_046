@@ -1,5 +1,6 @@
 package com.example.questnavigasitugas_046.view
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -41,6 +42,10 @@ fun Page3(
                 .padding(vertical = 16.dp),
             textAlign = TextAlign.Center
         )
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            verticalArrangement = Arrangement.spacedBy(16.dp)
+        ) {
     }
     }
 

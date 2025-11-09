@@ -108,4 +108,18 @@ fun PesertaCard(peserta: Peserta, modifier: Modifier = Modifier) {
             modifier = Modifier.padding(16.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            Row(
+                modifier = Modifier.fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ) {
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(text = "NAMA LENGKAP", fontSize = 10.sp, color = Color.Gray)
+                    Text(text = peserta.nama, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                }
+                Column(modifier = Modifier.weight(1f)) {
+                    Text(text = "JENIS KELAMIN", fontSize = 10.sp, color = Color.Gray)
+                    Text(text = peserta.jenisKelamin, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                }
+            }
+        }
 

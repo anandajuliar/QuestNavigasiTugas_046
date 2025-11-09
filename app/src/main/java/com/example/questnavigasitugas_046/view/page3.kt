@@ -92,6 +92,16 @@ fun Page3(
                     )
                 }
             }
+            Column(modifier = Modifier.fillMaxWidth()) {
+                Text(text = "ALAMAT", style = MaterialTheme.typography.labelSmall)
+                OutlinedTextField(
+                    value = alamat,
+                    onValueChange = { alamat = it },
+                    placeholder = { Text(text = "Isikan alamat") },
+                    modifier = Modifier.fillMaxWidth(),
+                    singleLine = true
+                )
+            }
         }
     }
     }

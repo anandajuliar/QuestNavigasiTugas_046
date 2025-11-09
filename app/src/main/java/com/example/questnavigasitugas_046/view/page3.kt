@@ -2,14 +2,18 @@ package com.example.questnavigasitugas_046.view
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
+import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -57,6 +61,36 @@ fun Page3(
                     modifier = Modifier.fillMaxWidth(),
                     singleLine = true
                 )
+            }
+            Column(modifier = Modifier.fillMaxWidth()) {
+                Text(text = "JENIS KELAMIN", style = MaterialTheme.typography.labelSmall)
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    RadioButton(
+                        selected = (jenisKelamin == "Laki-laki"),
+                        onClick = { jenisKelamin = "Laki-laki" }
+                    )
+                    Text(
+                        text = "Laki-laki",
+                        modifier = Modifier
+                            .selectable(
+                                selected = (jenisKelamin == "Laki-laki"),
+                                onClick = { jenisKelamin = "Laki-laki" }
+                            )
+                            .padding(end = 16.dp)
+                    )
+
+                    RadioButton(
+                        selected = (jenisKelamin == "Perempuan"),
+                        onClick = { jenisKelamin = "Perempuan" }
+                    )
+                    Text(
+                        text = "Perempuan",
+                        modifier = Modifier.selectable(
+                            selected = (jenisKelamin == "Perempuan"),
+                            onClick = { jenisKelamin = "Perempuan" }
+                        )
+                    )
+                }
             }
         }
     }

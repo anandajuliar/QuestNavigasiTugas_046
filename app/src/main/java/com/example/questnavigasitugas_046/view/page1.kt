@@ -1,6 +1,7 @@
 package com.example.questnavigasitugas_046.view
 
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -39,5 +40,22 @@ fun WelcomeScreen(
             color = Color.White.copy(alpha = 0.7f)
         )
         Spacer(modifier = Modifier.height(30.dp))
+        Button(
+            onClick = onNavigateToPage2,
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(50.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Color.White
+            ),
+            shape = RoundedCornerShape(10.dp)
+        ) {
+            Text(
+                text = stringResource(R.string.button_masuk),
+                fontSize = 18.sp,
+                color = Color.Black
+            )
+
+        }
     }
     }

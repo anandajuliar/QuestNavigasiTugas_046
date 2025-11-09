@@ -6,6 +6,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
@@ -46,6 +48,17 @@ fun Page3(
             modifier = Modifier.fillMaxWidth(),
             verticalArrangement = Arrangement.spacedBy(16.dp)
         ) {
+            Column(modifier = Modifier.fillMaxWidth()) {
+                Text(text = "NAMA LENGKAP", style = MaterialTheme.typography.labelSmall)
+                OutlinedTextField(
+                    value = nama,
+                    onValueChange = { nama = it },
+                    placeholder = { Text(text = "Isikan nama lengkap") },
+                    modifier = Modifier.fillMaxWidth(),
+                    singleLine = true
+                )
+            }
+        }
     }
     }
 

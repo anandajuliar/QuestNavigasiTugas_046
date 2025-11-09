@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -51,6 +52,12 @@ val listPeserta = listOf(
         jenisKelamin = "Laki - Laki",
         status = "Kawin",
         alamat = "Jogja"
+    ),
+    Peserta(
+        nama = "Okto",
+        jenisKelamin = "Laki - Laki",
+        status = "Kawin",
+        alamat = "Jogja"
     )
 )
 
@@ -65,23 +72,25 @@ fun Page2(
             .fillMaxSize()
             .padding(16.dp)
     ){
+        Spacer(modifier = Modifier.height(30.dp))
         Text(
             text = "List Daftar Peserta",
-            fontSize = 24.sp,
+            fontSize = 25.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 16.dp)
         )
+        Spacer(modifier = Modifier.height(40.dp))
         LazyColumn(
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(1f), //buat bisa ndorong ke bawah
-            verticalArrangement = Arrangement.spacedBy(16.dp)
+            verticalArrangement = Arrangement.spacedBy(20.dp)
         ) {
             items(listPeserta) { peserta ->
                 PesertaCard(peserta = peserta)
             }
         }
-        Spacer(modifier = Modifier.height(16.dp))
+        Spacer(modifier = Modifier.height(20.dp))
 
         Row(
             modifier = Modifier.fillMaxWidth(),
@@ -113,12 +122,12 @@ fun PesertaCard(peserta: Peserta, modifier: Modifier = Modifier) {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(text = "NAMA LENGKAP", fontSize = 10.sp, color = Color.Gray)
-                    Text(text = peserta.nama, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                    Text(text = "NAMA LENGKAP", fontSize = 15.sp, color = Color.Gray)
+                    Text(text = peserta.nama, fontSize = 20.sp, fontWeight = FontWeight.SemiBold)
                 }
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(text = "JENIS KELAMIN", fontSize = 10.sp, color = Color.Gray)
-                    Text(text = peserta.jenisKelamin, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                    Text(text = "JENIS KELAMIN", fontSize = 15.sp, color = Color.Gray)
+                    Text(text = peserta.jenisKelamin, fontSize = 20.sp, fontWeight = FontWeight.SemiBold)
                 }
             }
             Row(
@@ -126,12 +135,12 @@ fun PesertaCard(peserta: Peserta, modifier: Modifier = Modifier) {
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(text = "STATUS PERKAWINAN", fontSize = 10.sp, color = Color.Gray)
-                    Text(text = peserta.status, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                    Text(text = "STATUS PERKAWINAN", fontSize = 15.sp, color = Color.Gray)
+                    Text(text = peserta.status, fontSize = 20.sp, fontWeight = FontWeight.SemiBold)
                 }
                 Column(modifier = Modifier.weight(1f)) {
-                    Text(text = "ALAMAT", fontSize = 10.sp, color = Color.Gray)
-                    Text(text = peserta.alamat, fontSize = 14.sp, fontWeight = FontWeight.SemiBold)
+                    Text(text = "ALAMAT", fontSize = 15.sp, color = Color.Gray)
+                    Text(text = peserta.alamat, fontSize = 20.sp, fontWeight = FontWeight.SemiBold)
                 }
             }
         }

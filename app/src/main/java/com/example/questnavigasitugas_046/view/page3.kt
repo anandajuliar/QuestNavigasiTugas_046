@@ -12,7 +12,10 @@ import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.ExposedDropdownMenuBox
+import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.OutlinedTextField
@@ -119,6 +122,40 @@ fun Page3(
                             onClick = { jenisKelamin = "Perempuan" }
                         )
                     )
+                }
+            }
+            Column(modifier = Modifier.fillMaxWidth()) {
+                Text(text = "STATUS PERKAWINAN", style = MaterialTheme.typography.labelSmall)
+                ExposedDropdownMenuBox(
+                    expanded = isDropdownExpanded,
+                    onExpandedChange = { isDropdownExpanded = !isDropdownExpanded }
+                ) {
+                    OutlinedTextField(
+                        value = status,
+                        onValueChange = { },
+                        readOnly = true, //biar gk bs ngetik
+                        placeholder = { Text("Pilih status kawin") },
+                        trailingIcon = {
+                            ExposedDropdownMenuDefaults.TrailingIcon(expanded = isDropdownExpanded)
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .menuAnchor()
+                    )
+                    ExposedDropdownMenu(
+                        expanded = isDropdownExpanded,
+                        onDismissRequest = { isDropdownExpanded = false }
+                    ) {
+                        statusOptions.forEach { option ->
+                            DropdownMenuItem(
+                                text = { Text(option) },
+                                onClick = {
+                                    status = option
+                                    isDropdownExpanded = false
+                                }
+                            )
+                        }
+                    }
                 }
             }
             Column(modifier = Modifier.fillMaxWidth()) {

@@ -28,5 +28,16 @@ fun WelcomeScreen(
             fontWeight = FontWeight.Bold,
             color = Color.White
         )
+        Text(
+            text = stringResource(R.string.developer_name),
+            fontSize = 14.sp,
+            color = Color.White.copy(alpha = 0.7f)
+        )
+        Text(
+            text = stringResource(R.string.developer_nim),
+            fontSize = 14.sp,
+            color = Color.White.copy(alpha = 0.7f)
+        )
+        Spacer(modifier = Modifier.height(30.dp))
     }
     }

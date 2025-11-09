@@ -132,8 +132,26 @@ fun Page3(
                 }
             }
         }
+
     }
     }
+@Composable
+private fun DialogRow(label: String, value: String) {
+    Row(modifier = Modifier.fillMaxWidth()) {
+        Text(
+            text = label,
+            color = Color.Gray,
+            modifier = Modifier.weight(1f),
+            fontSize = 14.sp
+        )
+        Text(
+            text = value.ifEmpty { "-" },
+            modifier = Modifier.weight(1.5f),
+            fontSize = 14.sp,
+            fontWeight = FontWeight.SemiBold
+        )
+    }
+}
 
 
 
